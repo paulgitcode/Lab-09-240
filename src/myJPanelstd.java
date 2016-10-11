@@ -1,16 +1,28 @@
 import java.awt.*;
+import java.awt.event.ActionListener;
 import javax.swing.*;
-public class myJPanelstd extends JPanel 
+
+public class myJPanelstd extends JPanel implements ActionListener
 {
 	public myJPanelstd()
 	{
             super();
             setBackground(Color.pink);
-	    JButton jb1;
-   	    jb1 = new JButton("a real student-button should be here, not me, a simple JButton ...");
+            
+            student st1 = new student("Tom", "Jerry", 44);
+            
+	    //JButton jb1;
+   	    //jb1 = new JButton();
 //-------------------------------------------------------	    
 // add buttons to JPanel		
 //-------------------------------------------------------	    
-		add(jb1);
+		add(st1);
+                st1.setBackground(Color.gray);
+                st1.setText(st1.getN());
 	}
+        
+        public void actionPerformed(ActionEvent e)
+        {
+            
+        }
 }

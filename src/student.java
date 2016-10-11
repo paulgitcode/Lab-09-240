@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class student 
+public class student extends JButton
 {
 		String firstName;
 		String lastName;
@@ -20,7 +20,11 @@ public class student
 		{
 			return "NAME = "+firstName+ "  "+lastName+"  "+"Age = "+age;
 		}
-	
+                
+                String getN()
+                {
+                    return firstName + " " + lastName;
+                }
 	
 
 	
