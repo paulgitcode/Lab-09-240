@@ -20,6 +20,8 @@ public class myJPanelstd extends JPanel implements ActionListener
     int score; // holds player score
     myScoreP inScore; // holds the score panel menu
     ImageIcon bimg; // image for button
+    ImageIcon bimg1;
+    ImageIcon bimg2;
     
     
 	public myJPanelstd(myScoreP informedScore)
@@ -36,10 +38,12 @@ public class myJPanelstd extends JPanel implements ActionListener
             xMin = 20;
             yMax = 440;
             yMin = 20;
-            move = new Timer(500,this);
+            move = new Timer(1000,this);
             move.start();
             score = 0;
             bimg = new ImageIcon("images/giz.jpg");
+            bimg1 = new ImageIcon("images/giz1.jpg");
+            bimg2 = new ImageIcon("images/giz2.jpg");
 
             
 	    //JButton jb1;
@@ -50,7 +54,7 @@ public class myJPanelstd extends JPanel implements ActionListener
                 //st1.setText());
                 st1.addActionListener(this);
                 st1.setBounds(sX,sY,sWidth,sHeight); // in null layout, setBound(x,y,width, height)
-                st1.setIcon(bimg);
+                
                 
                 //inScore.scoreB.setText("Hello");
 	}
@@ -66,6 +70,16 @@ public class myJPanelstd extends JPanel implements ActionListener
            //st1.setBackground(Color.lightGray);
               score = score+1;
               inScore.scoreB.setText(String.valueOf(score));
+              if(score < 10)
+              {
+                  st1.setIcon(bimg);
+              }if (score > 10)
+              {
+                  st1.setIcon(bimg1);
+              }if (score >30)
+              {
+                  st1.setIcon(bimg2);
+              }
             
            
            }
