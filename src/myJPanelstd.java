@@ -19,6 +19,7 @@ public class myJPanelstd extends JPanel implements ActionListener
     double randY; // random number for Y coordinate
     int score; // holds player score
     myScoreP inScore; // holds the score panel menu
+    ImageIcon bimg; // image for button
     
     
 	public myJPanelstd(myScoreP informedScore)
@@ -27,17 +28,18 @@ public class myJPanelstd extends JPanel implements ActionListener
             inScore = informedScore;
             setBackground(Color.pink);
             setLayout(null);
-            sWidth = 20;
-            sHeight = 20;
+            sWidth = 60;
+            sHeight = 60;
             sX = 21;
             sY = 21;
             xMax = 580;
             xMin = 20;
             yMax = 440;
             yMin = 20;
-            move = new Timer(1000,this);
+            move = new Timer(500,this);
             move.start();
             score = 0;
+            bimg = new ImageIcon("images/giz.jpg");
 
             
 	    //JButton jb1;
@@ -48,6 +50,7 @@ public class myJPanelstd extends JPanel implements ActionListener
                 //st1.setText());
                 st1.addActionListener(this);
                 st1.setBounds(sX,sY,sWidth,sHeight); // in null layout, setBound(x,y,width, height)
+                st1.setIcon(bimg);
                 
                 //inScore.scoreB.setText("Hello");
 	}
