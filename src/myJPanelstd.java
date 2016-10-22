@@ -15,11 +15,16 @@ public class myJPanelstd extends JPanel implements ActionListener
     int yMax; // max value for y coordinate
     int xMin; // min value for x coordinate
     int yMin; // min value for y coordinate
+    double randX; // random number for X coordinate
+    double randY; // random number for Y coordinate
+    int score; // holds player score
+    myScoreP inScore; // holds the score panel menu
     
     
-	public myJPanelstd()
+	public myJPanelstd(myScoreP informedScore)
 	{
             super();
+            inScore = informedScore;
             setBackground(Color.pink);
             setLayout(null);
             sWidth = 20;
@@ -30,20 +35,23 @@ public class myJPanelstd extends JPanel implements ActionListener
             xMin = 20;
             yMax = 440;
             yMin = 20;
-            move = new Timer(100,this);
+            move = new Timer(1000,this);
             move.start();
+            score = 0;
+
             
 	    //JButton jb1;
    	    //jb1 = new JButton();
-//-------------------------------------------------------	    
-// add buttons to JPanel		
-//-------------------------------------------------------	    
+	    
 		add(st1);
                 st1.setBackground(Color.gray);
-                st1.setText(st1.getFN());
+                //st1.setText());
                 st1.addActionListener(this);
                 st1.setBounds(sX,sY,sWidth,sHeight); // in null layout, setBound(x,y,width, height)
+                
+                //inScore.scoreB.setText("Hello");
 	}
+        
        @Override 
         public void actionPerformed(ActionEvent e)
         {
@@ -53,6 +61,9 @@ public class myJPanelstd extends JPanel implements ActionListener
            {
            //st1.setText(st1.getFN());
            //st1.setBackground(Color.lightGray);
+              score = score+1;
+              inScore.scoreB.setText(String.valueOf(score));
+            
            
            }
           
@@ -60,14 +71,20 @@ public class myJPanelstd extends JPanel implements ActionListener
            if(obj == move)
            {
                
-           sX = sX+10;
-           sY = sY+10;
-           if (sX < xMax && sX > xMin && sY < yMax && sY > yMin)
-           {
+           randX = Math.random();
+           randY = Math.random();
                
-               st1.setBounds(sX,sY,sWidth,sHeight);
-            
-           }
+           sX = (int)(randX*580);
+           sY = (int)(randY*440);
+           
+            st1.setBounds(sX,sY,sWidth,sHeight);
+           
+            //if (sX < xMax && sX > xMin && sY < yMax && sY > yMin)
+           //{
+            //   
+             //  
+            //
+           //}
                
            }
         }
