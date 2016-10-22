@@ -25,6 +25,11 @@ public class student extends JButton
                 {
                     return firstName + " " + lastName;
                 }
+                
+                String getFN()
+                {
+                    return firstName;
+                }
 	
 
 	
