@@ -29,6 +29,7 @@ public class myScoreP extends JPanel
         scoreB = new JButton();
         title = new JLabel();
         scoreB.setText("Try to click me!");
+        title.setText(tText);
         add (title);
         add(scoreB);
         
