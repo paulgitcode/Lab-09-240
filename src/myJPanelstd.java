@@ -104,9 +104,6 @@ public class myJPanelstd extends JPanel implements ActionListener
               }if (score > 10)
               {
                   st1.setIcon(bimg1);
-              }if (score >30)
-              {
-                  st1.setIcon(bimg2);
               }
             
             if(score > scoreM)
@@ -114,6 +111,7 @@ public class myJPanelstd extends JPanel implements ActionListener
                 scoreF = score;
                 st1.removeActionListener(this);
                 move.stop();
+                st1.setIcon(bimg2);
                 inScore.scoreB.setText(String.valueOf(scoreF) + " clicks in " + String.valueOf(timeC) + winText);
                 
             }
